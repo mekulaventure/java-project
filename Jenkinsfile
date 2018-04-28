@@ -33,7 +33,7 @@ pipeline {
            proper role attached which allows it to access the S3 bucket.*/
             
              /*sh 'cat /workspace/java-pipeline/dist/rectangle*'*/
-             sh 'aws s3 cp cat /workspace/java-pipeline/dist/rectangle* s3://emekanewbucket/mybuilds'
+             sh 'aws s3 cp /workspace/java-pipeline/dist/rectangle* s3://emekanewbucket/mybuilds'
            }
       }
       
