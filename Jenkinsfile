@@ -31,11 +31,22 @@ pipeline {
            -  You can use the AWS CLI to copy files from Jenkins to the S3 bucket. Don’t 
            worry about access credentials for this step because the Jenkins server has a 
            proper role attached which allows it to access the S3 bucket.*/
-            
-             sh 'cat /workspace/java-pipeline/dist/rectangle*'
+               
              sh 'aws s3 cp /workspace/java-pipeline/dist/rectangle* s3://emekanewbucket/mybuilds'
            }
       }
+      stage ('Report') {
+            steps {
       
+          /*Jenkins will generate a report of the CloudFormation stack resources created in your 
+           environment using the command: aws cloudformation describe-stack-resources --region us-east-1 
+           --stack-name jenkins
+           Note: you will need to setup proper IAM and Jenkins access credentials to run this command.*/
+               
+            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awscredential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {    
+			    sh 'aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins'    
+           }
       }
+      
+   }
 }
