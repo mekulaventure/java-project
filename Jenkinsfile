@@ -33,8 +33,7 @@ pipeline {
            proper role attached which allows it to access the S3 bucket.*/
             
             sh 'pwd'
-            sh  'cp rectangle-*.jar .'
-               
+            sh  'cp /workspace/java-pipeline/dist/rectangle-*.jar .'
            }
       }
       
