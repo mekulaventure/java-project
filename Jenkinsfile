@@ -32,8 +32,9 @@ pipeline {
            worry about access credentials for this step because the Jenkins server has a 
            proper role attached which allows it to access the S3 bucket.*/
             
-            /*sh  'cd /workspace/java-pipeline/dist/ .'*/
             sh 'pwd'
+            sh 'cp rectangle-10.jar .'
+           
            }
       }
       
