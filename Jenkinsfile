@@ -1,6 +1,6 @@
 pipeline {
       agent any
-      statges{
+      stages{
       stage ('Unit Tests') {
       
           /*Jenkins will initiate unit tests using ant and create a junit report.
