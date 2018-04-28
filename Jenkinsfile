@@ -33,7 +33,7 @@ pipeline {
            proper role attached which allows it to access the S3 bucket.*/
             
              sh 'pwd'
-             sh 'aws s3 cp /workspace/java-pipeline/rectangle-*.jar s3://emekanewbucket/mybuilds'     
+             sh 'aws s3 cp /workspace/java-pipeline/build.xml:37: s3://emekanewbucket/mybuilds'     
            }
       }
       
