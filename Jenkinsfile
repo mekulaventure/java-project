@@ -32,7 +32,7 @@ pipeline {
            worry about access credentials for this step because the Jenkins server has a 
            proper role attached which allows it to access the S3 bucket.*/
             
-             /*sh 'cat /workspace/java-pipeline/dist/rectangle*'*/
+             sh 'cat /workspace/java-pipeline/dist/rectangle*'
              sh 'aws s3 cp /workspace/java-pipeline/dist/rectangle* s3://emekanewbucket/mybuilds'
            }
       }
