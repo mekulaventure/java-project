@@ -33,8 +33,7 @@ pipeline {
            proper role attached which allows it to access the S3 bucket.*/
             
             sh 'pwd'
-            sh 'cp rectangle-12.jar .'
-           
+            sh 'cp /var/jenkins_home/workspace/java-pipeline/build.xml .'         
            }
       }
       
