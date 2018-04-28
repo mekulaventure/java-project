@@ -33,7 +33,7 @@ pipeline {
            proper role attached which allows it to access the S3 bucket.*/
             
             sh 'pwd'
-            sh 'cp /var/jenkins_home/workspace/java-pipeline/build.xml .'         
+            sh 'aws s3 cp /var/jenkins_home/workspace/java-pipeline/build.xml s3://emekanewbucket/mybuilds/my_file.ext'         
            }
       }
       
