@@ -44,9 +44,10 @@ pipeline {
            --stack-name jenkins
            Note: you will need to setup proper IAM and Jenkins access credentials to run this command.*/
                
-            withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awscredential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {    
-			    sh 'aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins'    
-           }
+            /*withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awscredential', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])*/
+		    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'awsaccessid', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+    sh 'aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins'  
+		}          
 	 }	    
      }
    }
