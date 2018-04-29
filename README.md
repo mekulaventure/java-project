@@ -1,2 +1,2 @@
 # java-project
-Testing autmoatic trigger
+Testing autmoatic trigger test
