@@ -1,5 +1,7 @@
+properties([pipelineTriggers([githubPush()])])
 pipeline {
    agent any
+   node('linux')
    stages{
       stage ('Unit Tests') { 
             steps {
